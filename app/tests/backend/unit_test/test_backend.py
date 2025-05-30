@@ -2,7 +2,7 @@ import pytest
 from app.src.backend.main import hello_world
 
 
-#@pytest.mark.unit_test
+@pytest.mark.unit_test
 class TestBackEnd:
 
     def test_hello_word(self):
