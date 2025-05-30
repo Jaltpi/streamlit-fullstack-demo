@@ -1,0 +1,29 @@
+# Use postgres/example user/password credentials
+# TODO: Refactor Envrionment Variables to be replaced with github actions environment variables (CI/CD)
+# TODO: Extend Pytest workflows to be more modular in github actions (CI/CD) # -> Linter, Test, Build, Deploy
+# TODO: Create Sql initialisation bash Script (Database, Schema, Tables)
+# TODO: Create Docker Image for front-end (Streamlit)
+# TODO: Create Docker Image for backend API (FastAPI & SqlAlchemy)
+# TODO: Create Docker Image for airflow (Dags)
+# TODO: Migrate docker-compose to minikube
+services:
+
+  db:
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
