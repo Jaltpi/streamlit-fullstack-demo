@@ -1,0 +1,8 @@
+FROM python:3.12.10-slim-bookworm
+
+WORKDIR /usr/src/app
+
+RUN pip install uv && uv pip install fastapi uvicorn
+COPY . .
+
+CMD [ "python", "./backend/main.py" ]
