@@ -1,2 +1,2 @@
-# streamlit-tui-demo
+# streamlit-fullstack-demo
 Prototype Full Stack Engineer Interview
